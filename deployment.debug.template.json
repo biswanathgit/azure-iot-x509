@@ -84,11 +84,11 @@
               "image": "${MODULES.mosquitto-tls}",
               "createOptions": {
                 "ExposedPorts": {
-                  "1884/tcp": {}
+                  "8884/tcp": {}
                 },
                 "HostConfig": {
                   "PortBindings": {
-                    "1883/tcp": [{"HostPort": "1883"}]
+                    "8884/tcp": [{"HostPort": "8884"}]
                   }
                 }
               }

@@ -48,14 +48,14 @@ def on_message(client, userdata, msg):
     ptm_logic(msg)
 
 module_client = iotedge.init()
-module_client.send_message_to_output("Hello Biswanath ============= From demo_client ", ptm_output_name)
+module_client.send_message_to_output("Hello Biswanath ============= first msg ===>> ", ptm_output_name)
 
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-#client.tls_set('/app/ca.crt')
-client.connect("diptest01", 1883, 60)
+client.tls_set('/app/ca.crt')
+client.connect("52.191.249.80", 8884, 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.

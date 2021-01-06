@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY ./certificates/ ./
 
-#RUN rm -rf /mosquitto/config/mosquitto.conf
+RUN rm -rf /mosquitto/config/mosquitto.conf
 
-#COPY ./mosquittoconfig/mosquitto.conf /mosquitto/config/
+COPY ./mosquittoconfig/mosquitto.conf /mosquitto/config/

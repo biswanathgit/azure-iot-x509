@@ -10,3 +10,15 @@ docker build  --rm -f "/home/biswanath/docker_smaple/azure-iot-x509/modules/ptm/
  && docker push $ACR_ADDRESS/protocoltranslation/mosquitto-tls:0.0.1-amd64
 invalid argument "/protocoltranslation/ptm:0.0.1-amd64.debug" for "-t, --tag" flag: invalid reference format
 See 'docker build --help'.
+
+
+-----------------------------------------------------------------------------------------------
+    client.connect("diptest01", 8884, 60)
+  File "/usr/local/lib/python3.7/site-packages/paho/mqtt/client.py", line 941, in connect
+    return self.reconnect()
+  File "/usr/local/lib/python3.7/site-packages/paho/mqtt/client.py", line 1104, in reconnect
+    sock.do_handshake()
+  File "/usr/local/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'diptest01'. (_ssl.c:1091)
+------------------------------------------------------------------------------------------------
