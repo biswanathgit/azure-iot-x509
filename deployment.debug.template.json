@@ -64,17 +64,13 @@
             "settings": {
               "image": "${MODULES.ptm.debug}",
               "createOptions": {
-                "ExposedPorts": {
-                  "5678/tcp": {}
+                "NetworkingConfig": {
+                  "EndpointsConfig": {
+                    "host": {}
+                  }
                 },
                 "HostConfig": {
-                  "PortBindings": {
-                    "5678/tcp": [
-                      {
-                        "HostPort": "5678"
-                      }
-                    ]
-                  }
+                  "NetworkMode": "host"
                 }
               }
             }
@@ -85,14 +81,14 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "${MODULES.mosquit0-tls.debug}",
+              "image": "${MODULES.mosquitto-tls}",
               "createOptions": {
                 "ExposedPorts": {
-                  "8884/tcp": {}
+                  "1884/tcp": {}
                 },
                 "HostConfig": {
                   "PortBindings": {
-                    "8883/tcp": [{"HostPort": "8884"}]
+                    "1883/tcp": [{"HostPort": "1883"}]
                   }
                 }
               }

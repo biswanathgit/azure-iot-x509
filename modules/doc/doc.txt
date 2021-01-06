@@ -1,1 +1,12 @@
-pass: @mqtt
+pass: @mqttACR_ADDRESS
+
+docker build  --rm -f "/home/biswanath/docker_smaple/azure-iot-x509/modules/ptm/Dockerfile.amd64.debug"
+ -t $ACR_ADDRESS/protocoltranslation/ptm:0.0.1-amd64.debug "/home/biswanath/docker_smaple/azure-iot-x509/modules/ptm" 
+ 
+ && docker push $ACR_ADDRESS/protocoltranslation/ptm:0.0.1-amd64.debug 
+ 
+ && docker build  --rm -f "/home/biswanath/docker_smaple/azure-iot-x509/modules/mosquitto-tls/Dockerfile.amd64" -t $ACR_ADDRESS/protocoltranslation/mosquitto-tls:0.0.1-amd64 "/home/biswanath/docker_smaple/azure-iot-x509/modules/mosquitto-tls" 
+ 
+ && docker push $ACR_ADDRESS/protocoltranslation/mosquitto-tls:0.0.1-amd64
+invalid argument "/protocoltranslation/ptm:0.0.1-amd64.debug" for "-t, --tag" flag: invalid reference format
+See 'docker build --help'.
