@@ -1,0 +1,9 @@
+FROM eclipse-mosquitto:latest
+
+WORKDIR /app
+
+COPY ./certificates/ ./
+
+RUN rm -rf /mosquitto/config/mosquitto.conf
+
+COPY ./mosquittoconfig/mosquitto.conf /mosquitto/config/

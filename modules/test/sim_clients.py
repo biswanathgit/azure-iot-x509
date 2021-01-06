@@ -109,6 +109,7 @@ for i in range(clients_num):
 
 #connects clients to broker
 for client in clients:
+    client.tls_set('/home/dipadmin/ca.crt')
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect(broker_ip, broker_port, 60)
