@@ -55,7 +55,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.tls_set('/app/ca.crt')
-client.connect("52.191.249.80", 8884, 60)
+client.connect("diptest01", 8884, 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
